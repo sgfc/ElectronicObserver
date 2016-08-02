@@ -1604,14 +1604,17 @@ namespace ElectronicObserver.Window {
 			if ( _splitterDistance != -1 && splitContainer1.Height > 0 ) {
 				try {
 					splitContainer1.SplitterDistance = _splitterDistance;
-					_splitterDistance = -1;
-
+					if (splitContainer1.SplitterDistance == _splitterDistance) _splitterDistance = -1;
 				} catch ( Exception ) {
 					// *ぷちっ*
 				}
 			}
 		}
 
+        private void splitContainer1_SplitterMoving(object sender, SplitterCancelEventArgs e)
+        {
+            _splitterDistance = -1; //ユーザが移動しようとした時点でレイアウトからの復元は打ち切り
+        }
 
 	}
 }

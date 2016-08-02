@@ -808,7 +808,8 @@
 			this.splitContainer1.Size = new System.Drawing.Size(300, 200);
 			this.splitContainer1.SplitterDistance = 40;
 			this.splitContainer1.TabIndex = 1;
-			// 
+            this.splitContainer1.SplitterMoving += new System.Windows.Forms.SplitterCancelEventHandler(this.splitContainer1_SplitterMoving);
+            // 
 			// TabPanel
 			// 
 			this.TabPanel.AllowDrop = true;
